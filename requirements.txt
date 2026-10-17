@@ -8,3 +8,4 @@ python-dotenv==1.0.1
 Werkzeug==3.0.3
 eventlet==0.41.2
 simple-websocket==1.1.0
+gunicorn 
