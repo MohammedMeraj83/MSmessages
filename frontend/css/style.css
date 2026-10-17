@@ -1,0 +1,179 @@
+  /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.25);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(56, 189, 248, 0.4);
+    }
+    
+    /* Subtle Glassmorphic Blur and Card Glows */
+    .glass-panel {
+      background: rgba(13, 19, 34, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .light .glass-panel {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    
+    .glow-cyan {
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+    }
+    
+    /* Reels vertical snap scroll */
+    .reels-container {
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none;
+    }
+    .reels-container::-webkit-scrollbar {
+      display: none;
+    }
+    .reel-item {
+      scroll-snap-align: start;
+    }
+    
+    /* Interactive ripple effect */
+    .ripple {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #uploadProgressBar {
+      width: 0%;
+    }
+
+    #messageStream, #messageStream * {
+      user-select: text;
+      -webkit-user-select: text;
+    }
+
+    #mobileChatBackdrop {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      html,
+      body,
+      #app,
+      #mainDashboard {
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      #viewChatTab {
+        min-height: 0;
+      }
+
+      #chatSidebar {
+        width: min(88vw, 360px);
+        max-width: 360px;
+        height: 100%;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      #mobileChatBackdrop.is-visible {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 25;
+        background: rgba(0, 0, 0, 0.62);
+        backdrop-filter: blur(2px);
+      }
+
+      #viewChatTab > main {
+        width: 100%;
+        min-width: 0;
+      }
+
+      #messageStream {
+        min-height: 0;
+        overscroll-behavior: contain;
+        padding: 12px;
+      }
+
+      #callSimulatorModal {
+        padding: 0;
+        align-items: stretch;
+      }
+
+      #callPanel {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        height: 100dvh;
+        min-height: 0;
+        border-radius: 0;
+        border: 0;
+        padding: max(16px, env(safe-area-inset-top)) 14px max(20px, env(safe-area-inset-bottom));
+      }
+
+      #callVideoStage {
+        min-height: 0;
+        flex: 1 1 auto;
+        border-radius: 20px;
+      }
+
+      #callRemoteVideo {
+        object-fit: contain;
+        background: #02040a;
+      }
+
+      #callLocalVideo {
+        width: clamp(92px, 27vw, 140px);
+        right: 10px;
+        bottom: 10px;
+      }
+
+      #callActiveControls,
+      #callIncomingControls {
+        padding-bottom: max(4px, env(safe-area-inset-bottom));
+      }
+
+      #viewProfileTab,
+      #viewSecurityTab,
+      #viewReelsTab {
+        min-height: 0;
+        padding-bottom: calc(72px + env(safe-area-inset-bottom));
+      }
+
+      #messageTextInput {
+        min-width: 0;
+        max-height: 96px;
+      }
+
+      #voiceRecordingBar {
+        gap: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #voiceRecordingBar > div:first-child {
+        min-width: 0;
+        gap: 8px;
+      }
+
+      #voiceRecordingLabel {
+        max-width: 38vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 10px;
+      }
+
+      #voiceRecordingWaveform {
+        display: none;
+      }
+    }
